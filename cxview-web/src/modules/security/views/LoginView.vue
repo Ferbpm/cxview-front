@@ -46,10 +46,10 @@ async function submit() {
     <form class="auth-form" novalidate @submit.prevent="submit">
       <Message v-if="requestError" severity="error" :closable="false">{{ requestError }}</Message>
       <div class="form-field">
-        <label for="username">Usuario o correo</label>
+        <label for="username">Usuario</label>
         <span class="p-input-icon-left input-wrap">
           <i class="pi pi-user" aria-hidden="true" />
-          <InputText id="username" v-model="username" autocomplete="username" placeholder="nombre@empresa.com" fluid />
+          <InputText id="username" v-model="username" autocomplete="username" placeholder="Ingresa tu usuario" fluid />
         </span>
         <Message v-if="submitted && !username.trim()" severity="error" size="small" variant="simple">Ingresa tu usuario.</Message>
       </div>
@@ -57,10 +57,12 @@ async function submit() {
       <div class="form-field">
         <div class="field-heading">
           <label for="password">Contraseña</label>
-          <button class="text-action" type="button">¿Olvidaste tu contraseña?</button>
         </div>
         <Password id="password" v-model="password" autocomplete="current-password" placeholder="Ingresa tu contraseña" :feedback="false" toggle-mask fluid />
         <Message v-if="submitted && !password" severity="error" size="small" variant="simple">Ingresa tu contraseña.</Message>
+        <div class="field-heading">
+          <button class="text-action" type="button">¿Olvidaste tu contraseña?</button>
+        </div>
       </div>
 
       <label class="remember-row" for="remember">

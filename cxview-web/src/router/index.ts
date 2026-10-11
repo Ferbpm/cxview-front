@@ -28,6 +28,12 @@ const router = createRouter({
       component: () => import('@/modules/security/views/WorkspaceView.vue'),
       meta: { title: 'Espacio de trabajo' },
     },
+    {
+      path: '/security/productos/registro',
+      name: 'product-registration',
+      component: () => import('@/modules/security/views/ProductRegistrationView.vue'),
+      meta: { title: 'Registro de Producto' },
+    },
   ],
 })
 
